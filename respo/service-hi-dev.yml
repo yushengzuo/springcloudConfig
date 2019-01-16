@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: service-hi
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    url: jdbc:mysql://127.0.0.1:3306/1806b?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    validationQuery: SELECT 1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+
+mybatis:
+  config-locations: classpath:mybatis/confg.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.jk.model
